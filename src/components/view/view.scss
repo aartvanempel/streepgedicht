@@ -1,0 +1,33 @@
+.controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+
+  > li {
+    width: 100%;
+  }
+}
+
+.content-container {
+  margin: auto;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 5px;
+    font-family: 'Droid Serif', serif;
+    font-size: 18px;
+
+    span {
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+}

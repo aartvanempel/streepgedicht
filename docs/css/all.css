@@ -1,0 +1,89 @@
+.btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: .5rem;
+  font-size: 14px;
+  text-transform: uppercase; }
+  .btn--category {
+    color: #fff; }
+  .btn--achterklap {
+    background-color: blue; }
+  .btn--algemeen {
+    background-color: tomato; }
+  .btn--sport {
+    background-color: gold; }
+  .btn--reset {
+    background-color: #fff;
+    color: #000; }
+  .btn--blackout {
+    background-color: #000;
+    color: #fff; }
+
+body {
+  margin: 0; }
+
+main {
+  max-width: 320px;
+  margin: auto;
+  text-align: center; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    background-color: yellow; }
+
+h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  margin-bottom: .25em;
+  background-color: #fff; }
+  h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    width: 320px;
+    height: 2px;
+    background-color: #000;
+    z-index: -1; }
+
+.blackout {
+  background-color: #000; }
+
+.controls {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row; }
+
+.category-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  list-style: none; }
+  .category-list > li {
+    width: 100%; }
+
+.content-container {
+  margin: auto; }
+  .content-container p {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0;
+    padding: 0 5px;
+    font-family: 'Droid Serif', serif;
+    font-size: 18px; }
+    .content-container p span {
+      margin: 5px;
+      cursor: pointer; }
+
+/*# sourceMappingURL=all.css.map */

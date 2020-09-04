@@ -1,0 +1,33 @@
+{
+  "name": "projectje",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.26.12",
+    "browserify": "^13.3.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^2.1.2",
+    "rss-parser": "^3.9.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^1.1.2",
+    "watchify": "^3.11.1"
+  },
+  "dependencies": {
+    "babel-register": "^6.26.0"
+  }
+}

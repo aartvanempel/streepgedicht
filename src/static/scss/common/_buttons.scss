@@ -1,0 +1,34 @@
+.btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: .5rem;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &--category {
+    color: #fff;
+  }
+
+  &--achterklap {
+    background-color: blue;
+  }
+
+  &--algemeen {
+    background-color: tomato;
+  }
+
+  &--sport {
+    background-color: gold;
+  }
+
+  &--reset {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &--blackout {
+    background-color: #000;
+    color: #fff;
+  }
+}
