@@ -15797,7 +15797,7 @@ var _Controller2 = _interopRequireDefault(_Controller);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var model = new _Model2.default('http://www.nu.nl/rss/');
+    var model = new _Model2.default('https://www.nu.nl/rss/');
     var view = new _View2.default();
     new _Controller2.default(model, view);
 });

@@ -4,7 +4,7 @@ class DataProvider {
 
     constructor(category) {
         return new Promise((resolve, reject) => {
-            getFeed(`http://www.nu.nl/rss/${category}`)
+            getFeed(`https://www.nu.nl/rss/${category}`)
                 .then(data => this._processData(data))
                 .then(processedData => resolve(processedData))
                 .catch(err => reject(err))
