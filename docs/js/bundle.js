@@ -15992,7 +15992,7 @@ var Observer = function () {
 exports.default = new Observer();
 
 },{}],106:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -16000,7 +16000,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getFeed = getFeed;
 exports.targetIsElement = targetIsElement;
 
-var _rssParser = require('rss-parser');
+var _rssParser = require("rss-parser");
 
 var _rssParser2 = _interopRequireDefault(_rssParser);
 
@@ -16010,7 +16010,7 @@ var rss = new _rssParser2.default();
 
 function getFeed(url) {
     return new Promise(function (resolve, reject) {
-        rss.parseURL(url, function (error, data) {
+        rss.parseURL("https://cors-anywhere.herokuapp.com/" + url, function (error, data) {
             error ? reject(error) : resolve(data);
         });
     });
