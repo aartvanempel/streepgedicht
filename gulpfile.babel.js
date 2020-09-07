@@ -32,7 +32,7 @@ gulp.task('sass', () => {
             browsers: ['last 2 versions']
         }))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('docs/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browsersync.reload({stream: true}));
 });
 
@@ -53,7 +53,7 @@ function bundle() {
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('docs/js/'))
+        .pipe(gulp.dest('dist/js/'))
         .pipe(browsersync.reload({stream: true}));
 
     return b;
@@ -66,19 +66,14 @@ gulp.task('nunjucks', () => {
             path: ['src/layout/', 'src/components']
         }))
         .pipe(gulp.dest('./'))
-        .pipe(gulp.dest('docs/'))
+        .pipe(gulp.dest('dist/'))
         .pipe(browsersync.reload({stream: true}));
 });
 
 // copy img to dist //
 gulp.task('copy', () => {
     gulp.src(['src/static/img/*'])
-        .pipe(gulp.dest('docs/img'))
-});
-
-gulp.task('copyIndex', () => {
-    gulp.src(['./index.html'])
-        .pipe(gulp.dest('docs/'))
+        .pipe(gulp.dest('dist/img'))
 });
 
 // watch //
@@ -89,4 +84,4 @@ gulp.task('watch', () => {
 });
 
 // default //
-gulp.task('default', ['copy', 'copyIndex', 'browsersync', 'browserify', 'sass', 'watch']);
+gulp.task('default', ['copy', 'browsersync', 'browserify', 'sass', 'watch']);
