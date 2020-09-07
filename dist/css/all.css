@@ -98,11 +98,7 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
-  list-style: none;
-  list-style-type: none; }
-  .category-list > div {
-    width: 100%; }
+      flex-direction: row; }
 
 .content-container {
   margin: auto; }

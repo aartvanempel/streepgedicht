@@ -6,12 +6,6 @@
 .category-list {
   display: flex;
   flex-direction: row;
-  list-style: none;
-  list-style-type: none;
-
-  > div {
-    width: 100%;
-  }
 }
 
 .content-container {
