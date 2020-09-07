@@ -1,3 +1,7 @@
+button {
+  margin: 0;
+}
+
 .btn {
   display: block;
   width: 100%;
@@ -32,5 +36,10 @@
   &--blackout {
     background-color: #222;
     color: #fff;
+  }
+
+  &--save {
+    background-color: #ecf0f1;
+    color: #222;
   }
 }

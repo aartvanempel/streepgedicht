@@ -1,3 +1,6 @@
+button {
+  margin: 0; }
+
 .btn {
   display: block;
   width: 100%;
@@ -21,6 +24,9 @@
   .btn--blackout {
     background-color: #222;
     color: #fff; }
+  .btn--save {
+    background-color: #ecf0f1;
+    color: #222; }
 
 html {
   -webkit-tap-highlight-color: transparent; }
@@ -31,7 +37,7 @@ body {
 
 main {
   margin: auto;
-  margin-top: 32px;
+  margin-top: 16px;
   margin-bottom: 32px;
   max-width: 256px;
   text-align: center; }
