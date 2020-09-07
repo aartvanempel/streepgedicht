@@ -30,16 +30,7 @@ h1 {
 .tag {
   position: relative;
   cursor: default;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #222;
-  }
+  background-color: #222;
 }
 
 .tag-logo {
