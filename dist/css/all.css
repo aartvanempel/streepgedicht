@@ -99,11 +99,10 @@ h1 {
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
-  list-style: none; }
+  list-style: none;
+  list-style-type: none; }
   .category-list > li {
     width: 100%; }
-    .category-list > li::marker {
-      background: none; }
 
 .content-container {
   margin: auto; }
