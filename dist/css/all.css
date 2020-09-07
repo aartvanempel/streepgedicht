@@ -39,6 +39,7 @@ main {
   margin: auto;
   margin-top: 16px;
   margin-bottom: 32px;
+  padding: 16px;
   max-width: 256px;
   text-align: center; }
 
@@ -73,23 +74,14 @@ h1 {
 .tag-logo {
   cursor: default;
   position: relative;
-  top: 3px;
-  font-size: 11px;
+  font-size: 10px;
   color: #222;
   text-transform: uppercase;
   font-family: 'Source Code Pro', monospace;
   padding-left: 4px;
-  padding-right: 4px; }
-  .tag-logo::before {
-    content: '';
-    transform: translateY(-3px);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #ffd300;
-    z-index: -1; }
+  padding-right: 4px;
+  background-color: #ffd300;
+  line-height: 2; }
 
 .blackout {
   background-color: #222; }
