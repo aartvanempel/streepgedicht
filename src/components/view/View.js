@@ -3,6 +3,7 @@ import Nav from 'nav/Nav'
 import Blackout from 'blackout/Blackout'
 import Reset from 'reset/Reset'
 import Word from 'word/Word'
+import SaveToImage from 'saveToImage/SaveToImage'
 
 class View {
     constructor() {
@@ -17,6 +18,7 @@ class View {
         const nav = new Nav(document.querySelector('#nav'))
         const reset = new Reset(document.querySelector('#reset'))
         const blackout = new Blackout(document.querySelector('#blackout'))
+        new SaveToImage(document.querySelector('#save-to-image'))
 
         Observer.subscribe(nav, 'categoryChanged', category => Observer.publish(this, 'onCategoryChanged', category))
         Observer.subscribe(reset, 'reset', () => Observer.publish(this, 'onReset'))

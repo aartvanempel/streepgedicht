@@ -28,6 +28,7 @@
     "watchify": "^3.11.1"
   },
   "dependencies": {
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "html2canvas": "^1.0.0-rc.7"
   }
 }
