@@ -35,7 +35,7 @@ class View {
         })
 
         this._contentParagraph.appendChild(documentFragment)
-        this._contentContainer.appendChild(this._contentParagraph)
+        this._contentContainer.prepend(this._contentParagraph)
     }
 }
 

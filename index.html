@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackout Poems</title>
-    <link rel='icon' type='image/png' href='./img/FFFFFF-0.png'/>
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel='icon' type='image/png' href='./img/FFFFFF-0.png' />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/all.css">
 </head>
+
 <body>
 
 
-        <nav id='nav'>
-            <ul class="category-list">
-                <li>
-                    <button data-category='achterklap' class="btn btn--category btn--achterklap">achterklap</button>
-                </li>
-                <li>
-                    <button data-category='algemeen' class="btn btn--category btn--algemeen">algemeen</button>
-                </li>
-                <li>
-                    <button data-category='sport' class="btn btn--category btn--sport">sport</button>
-                </li>
-            </ul>
-        </nav>
+    <nav id='nav'>
+        <ul class="category-list">
+            <li>
+                <button data-category='achterklap' class="btn btn--category btn--achterklap">achterklap</button>
+            </li>
+            <li>
+                <button data-category='algemeen' class="btn btn--category btn--algemeen">algemeen</button>
+            </li>
+            <li>
+                <button data-category='sport' class="btn btn--category btn--sport">sport</button>
+            </li>
+        </ul>
+    </nav>
 
-        <section class="controls">
-            <button id="reset" class="btn btn--reset">reset</button>
-            <button id="blackout" class="btn btn--blackout">blackout</button>
-        </section>
+    <section class="controls">
+        <button id="reset" class="btn btn--reset">reset</button>
+        <button id="blackout" class="btn btn--blackout">streep</button>
+    </section>
 
-        <main>
-            <h1>Blackout Poems</h1>
-            <div id='content-container' class='content-container'></div>
-        </main>
+    <main>
+        <div id='content-container' class='content-container'>
+
+        </div>
+        <div class='content-container'>
+            <p>
+                <span class="tag">xxxxxxxx</span>
+                <span class="tag">xxxx</span>
+                <span class="tag">xx</span>
+                <span class="tag-logo">streepgedicht</span>
+            </p>
+        </div>
+    </main>
 
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
-<script src="./dist/js/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+    <script src="./dist/js/bundle.js"></script>
 </body>
+
 </html>

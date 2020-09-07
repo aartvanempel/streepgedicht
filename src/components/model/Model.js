@@ -7,6 +7,7 @@ class Model {
 
     async getData(category) {
         const response = await getFeed(this._url + category)
+
         this._data = Model.processedData(response)
 
         return this._data
@@ -14,7 +15,8 @@ class Model {
 
     static processedData(data) {
         return data.items
-            .map(entry => entry.title.replace("Achterklap-updates", " ").replace(/[.,()"':|]/g, ''))
+            .slice(0, 6)
+            .map(entry => entry.title.replace("Achterklap-updates", "").replace(/[.,()"':|]/g, '').trim())
             .join(' ')
             .split(' ')
             .map(text => ({label: text, selected: false}))

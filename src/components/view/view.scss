@@ -16,17 +16,19 @@
 .content-container {
   margin: auto;
 
+
   p {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0 5px;
-    font-family: 'Droid Serif', serif;
-    font-size: 18px;
+    padding: 0 4px;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    color: #222;
 
     span {
-      margin: 5px;
+      margin: 4px;
       cursor: pointer;
     }
   }

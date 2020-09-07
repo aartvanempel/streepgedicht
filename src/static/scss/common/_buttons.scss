@@ -5,6 +5,7 @@
   padding: .5rem;
   font-size: 14px;
   text-transform: uppercase;
+  font-family: 'Source Code Pro', monospace;
 
   &--category {
     color: #fff;
@@ -19,16 +20,16 @@
   }
 
   &--sport {
-    background-color: gold;
+    background-color: #ffd300;
   }
 
   &--reset {
     background-color: #fff;
-    color: #000;
+    color: #222;
   }
 
   &--blackout {
-    background-color: #000;
+    background-color: #222;
     color: #fff;
   }
 }

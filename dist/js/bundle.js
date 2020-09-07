@@ -15494,6 +15494,7 @@ var Model = function () {
                             case 2:
                                 response = _context.sent;
 
+
                                 this._data = Model.processedData(response);
 
                                 return _context.abrupt("return", this._data);
@@ -15534,8 +15535,8 @@ var Model = function () {
     }], [{
         key: "processedData",
         value: function processedData(data) {
-            return data.items.map(function (entry) {
-                return entry.title.replace("Achterklap-updates", " ").replace(/[.,()"':|]/g, '');
+            return data.items.slice(0, 6).map(function (entry) {
+                return entry.title.replace("Achterklap-updates", "").replace(/[.,()"':|]/g, '').trim();
             }).join(' ').split(' ').map(function (text) {
                 return { label: text, selected: false };
             });
@@ -15722,7 +15723,7 @@ var View = function () {
             });
 
             this._contentParagraph.appendChild(documentFragment);
-            this._contentContainer.appendChild(this._contentParagraph);
+            this._contentContainer.prepend(this._contentParagraph);
         }
     }]);
 

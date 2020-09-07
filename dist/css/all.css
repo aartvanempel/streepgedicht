@@ -4,7 +4,8 @@
   border: 0;
   padding: .5rem;
   font-size: 14px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-family: 'Source Code Pro', monospace; }
   .btn--category {
     color: #fff; }
   .btn--achterklap {
@@ -12,12 +13,12 @@
   .btn--algemeen {
     background-color: tomato; }
   .btn--sport {
-    background-color: gold; }
+    background-color: #ffd300; }
   .btn--reset {
     background-color: #fff;
-    color: #000; }
+    color: #222; }
   .btn--blackout {
-    background-color: #000;
+    background-color: #222;
     color: #fff; }
 
 body {
@@ -25,8 +26,10 @@ body {
   margin-bottom: 2rem; }
 
 main {
-  max-width: 320px;
   margin: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  max-width: 256px;
   text-align: center; }
 
 ul {
@@ -49,11 +52,44 @@ h1 {
     transform: translate(-50%);
     width: 320px;
     height: 2px;
-    background-color: #000;
+    background-color: #222;
+    z-index: -1; }
+
+.tag {
+  position: relative;
+  cursor: default; }
+  .tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #222; }
+
+.tag-logo {
+  cursor: default;
+  position: relative;
+  top: 3px;
+  font-size: 11px;
+  color: #222;
+  text-transform: uppercase;
+  font-family: 'Source Code Pro', monospace;
+  padding-left: 4px;
+  padding-right: 4px; }
+  .tag-logo::before {
+    content: '';
+    transform: translateY(-3px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffd300;
     z-index: -1; }
 
 .blackout {
-  background-color: #000; }
+  background-color: #222; }
 
 .controls {
   display: -ms-flexbox;
@@ -75,16 +111,15 @@ h1 {
   .content-container p {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0;
-    padding: 0 5px;
-    font-family: 'Droid Serif', serif;
-    font-size: 18px; }
+    padding: 0 4px;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    color: #222; }
     .content-container p span {
-      margin: 5px;
+      margin: 4px;
       cursor: pointer; }
 
 /*# sourceMappingURL=all.css.map */
