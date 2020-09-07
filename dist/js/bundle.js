@@ -22748,7 +22748,7 @@ var SaveToImage = function () {
         key: '_onClick',
         value: function _onClick() {
             (0, _html2canvas2.default)(document.querySelector('#main'), {
-                scale: 4
+                scale: 6
             }).then(function (canvas) {
                 var getFullCanvas = canvas;
                 var link = document.createElement('a');
