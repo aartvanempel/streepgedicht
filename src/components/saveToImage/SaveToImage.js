@@ -8,7 +8,9 @@ class SaveToImage {
     }
 
     _onClick() {
-        html2canvas(document.querySelector('#main')).then(canvas => {
+        html2canvas(document.querySelector('#main'), {
+            scale: 4
+        }).then(canvas => {
             const getFullCanvas = canvas;
             const link = document.createElement('a');
 
