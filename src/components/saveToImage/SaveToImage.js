@@ -11,15 +11,15 @@ class SaveToImage {
         html2canvas(document.querySelector('#main'), {
             scale: 6
         }).then(canvas => {
-            const getFullCanvas = canvas;
-            const link = document.createElement('a');
+                const getFullCanvas = canvas;
+                const link = document.createElement('a');
 
-            link.href = getFullCanvas.toDataURL("image/png");
-            link.download = 'streepgedicht.png';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
+                link.href = getFullCanvas.toDataURL("image/png");
+                link.download = 'streepgedicht.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
     }
 }
 
