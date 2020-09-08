@@ -15,11 +15,23 @@ class Model {
 
     static processedData(data) {
         return data.items
-            .slice(0, 8)
-            .map(entry => entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Transferupdates", "").replace(/[.,()"':|]/g, '').trim())
+            .slice(0, 7)
+            .map(entry => {
+                return (
+                    entry.title
+                        .replace("Achterklap-updates", "")
+                        .replace("Podcast", "")
+                        .replace("Video", "")
+                        .replace("Weerbericht", "")
+                        .replace("Liveblog", "")
+                        .replace("Transferupdates", "")
+                        .replace("NUcheckt", "")
+                        .replace(/[.,()"':|]/g, '').trim()
+                )
+            })
             .join(' ')
             .split(' ')
-            .map(text => ({label: text, selected: false}))
+            .map(text => ({ label: text, selected: false }))
     }
 
     toggleSelected(item) {
