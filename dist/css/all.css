@@ -42,6 +42,9 @@ main {
   max-width: 256px;
   text-align: center; }
 
+#tag-container {
+  opacity: 0; }
+
 ul {
   padding: 0;
   margin: 0; }
@@ -53,7 +56,9 @@ h1 {
   display: inline-block;
   padding: 0 5px;
   margin-bottom: .25em;
-  background-color: #fff; }
+  background-color: #fff;
+  font-family: 'Source Code Pro', monospace;
+  text-transform: uppercase; }
   h1::after {
     content: '';
     position: absolute;
@@ -102,6 +107,8 @@ h1 {
   .content-container p {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0;

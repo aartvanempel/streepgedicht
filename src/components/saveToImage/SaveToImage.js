@@ -1,5 +1,6 @@
 import Observer from 'utils/Observer'
 import html2canvas from 'html2canvas'
+import { transformFile } from 'babel-core'
 
 class SaveToImage {
     constructor(element) {
@@ -9,6 +10,10 @@ class SaveToImage {
 
     _onClick() {
         html2canvas(document.querySelector('#main'), {
+            onclone: clonedDoc => {
+                clonedDoc.getElementById('tag-container').style.opacity = 1;
+            },
+            removeContainer: false,
             scale: 6
         }).then(canvas => {
                 const getFullCanvas = canvas;

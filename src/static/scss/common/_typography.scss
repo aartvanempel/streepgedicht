@@ -13,6 +13,8 @@ h1 {
   padding: 0 5px;
   margin-bottom: .25em;
   background-color: #fff;
+  font-family: 'Source Code Pro', monospace;
+  text-transform: uppercase;
 
   &::after {
     content: '';
