@@ -16,7 +16,7 @@ class Model {
     static processedData(data) {
         return data.items
             .slice(0, 6)
-            .map(entry => entry.title.replace("Achterklap-updates", "").replace(/[.,()"':|]/g, '').trim())
+            .map(entry => entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Transferupdates", "").replace(/[.,()"':|]/g, '').trim())
             .join(' ')
             .split(' ')
             .map(text => ({label: text, selected: false}))

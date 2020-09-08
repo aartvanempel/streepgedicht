@@ -22605,7 +22605,7 @@ var Model = function () {
         key: "processedData",
         value: function processedData(data) {
             return data.items.slice(0, 6).map(function (entry) {
-                return entry.title.replace("Achterklap-updates", "").replace(/[.,()"':|]/g, '').trim();
+                return entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Transferupdates", "").replace(/[.,()"':|]/g, '').trim();
             }).join(' ').split(' ').map(function (text) {
                 return { label: text, selected: false };
             });
