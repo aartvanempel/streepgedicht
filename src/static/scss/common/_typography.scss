@@ -7,25 +7,29 @@ ul {
   }
 }
 
-h1 {
+.title {
   position: relative;
-  display: inline-block;
-  padding: 0 5px;
-  margin-bottom: .25em;
-  background-color: #fff;
-  font-family: 'Source Code Pro', monospace;
-  text-transform: uppercase;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 8px;
 
   &::after {
     content: '';
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%);
-    width: 320px;
     height: 2px;
     background-color: #222;
-    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+  }
+
+  h1 {
+    color: #222;
+    margin-bottom: 0;
+    font-size: 28px;
+    font-family: 'Source Code Pro', monospace;
+    // text-transform: uppercase;
+    // font-family: 'Lora', serif;
   }
 }
 

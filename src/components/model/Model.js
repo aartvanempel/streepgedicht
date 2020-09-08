@@ -15,7 +15,7 @@ class Model {
 
     static processedData(data) {
         return data.items
-            .slice(0, 6)
+            .slice(0, 8)
             .map(entry => entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Transferupdates", "").replace(/[.,()"':|]/g, '').trim())
             .join(' ')
             .split(' ')
