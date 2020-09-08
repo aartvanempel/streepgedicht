@@ -13,7 +13,6 @@ class SaveToImage {
             onclone: clonedDoc => {
                 clonedDoc.getElementById('tag-container').style.opacity = 1;
             },
-            removeContainer: false,
             scale: 6
         }).then(canvas => {
                 const getFullCanvas = canvas;

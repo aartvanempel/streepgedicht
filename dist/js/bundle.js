@@ -65035,7 +65035,6 @@ var SaveToImage = function () {
                 onclone: function onclone(clonedDoc) {
                     clonedDoc.getElementById('tag-container').style.opacity = 1;
                 },
-                removeContainer: false,
                 scale: 6
             }).then(function (canvas) {
                 var getFullCanvas = canvas;
