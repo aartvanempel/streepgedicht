@@ -64922,6 +64922,7 @@ var Nav = function () {
         _classCallCheck(this, Nav);
 
         this._element = element;
+        this._loadingContainer = document.querySelector('.loading-container');
         this._categoryButtons = [].concat(_toConsumableArray(this._element.querySelectorAll('[data-category]')));
 
         this._categoryButtons.forEach(function (button) {
@@ -64934,7 +64935,7 @@ var Nav = function () {
     _createClass(Nav, [{
         key: '_onClick',
         value: function _onClick(e) {
-            document.querySelector('.loading-container').style.display = 'block';
+            this._loadingContainer.style.display = 'block';
 
             var category = e.target.dataset.category;
             _Observer2.default.publish(this, 'categoryChanged', category);
@@ -65095,6 +65096,7 @@ var View = function () {
         _classCallCheck(this, View);
 
         this._data = null;
+        this._loadingContainer = document.querySelector('.loading-container');
         this._contentContainer = document.querySelector('.content-container');
         this._contentParagraph = document.createElement('p');
 
@@ -65141,7 +65143,7 @@ var View = function () {
             this._contentParagraph.appendChild(documentFragment);
             this._contentContainer.prepend(this._contentParagraph);
 
-            document.querySelector('.loading-container').style.display = 'none';
+            this._loadingContainer.style.display = 'none';
         }
     }]);
 

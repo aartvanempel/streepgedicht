@@ -4,6 +4,7 @@ class Nav {
 
     constructor(element) {
         this._element = element;
+        this._loadingContainer = document.querySelector('.loading-container');
         this._categoryButtons = [...this._element.querySelectorAll('[data-category]')];
 
         this._categoryButtons.forEach(button => {
@@ -12,8 +13,8 @@ class Nav {
     }
 
     _onClick(e) {
-        document.querySelector('.loading-container').style.display = 'block';
-        
+        this._loadingContainer.style.display = 'block';
+
         const category = e.target.dataset.category;
         Observer.publish(this, 'categoryChanged', category);
     }

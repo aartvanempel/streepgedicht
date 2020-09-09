@@ -8,6 +8,7 @@ import SaveToImage from 'saveToImage/SaveToImage'
 class View {
     constructor() {
         this._data = null
+        this._loadingContainer = document.querySelector('.loading-container')
         this._contentContainer = document.querySelector('.content-container')
         this._contentParagraph = document.createElement('p')
 
@@ -39,7 +40,7 @@ class View {
         this._contentParagraph.appendChild(documentFragment)
         this._contentContainer.prepend(this._contentParagraph)
 
-        document.querySelector('.loading-container').style.display = 'none';
+        this._loadingContainer.style.display = 'none';
     }
 }
 
