@@ -3691,27 +3691,21 @@ function _shouldIgnore(pattern, filename) {
 }
 },{"babel-runtime/core-js/get-iterator":55,"lodash/escapeRegExp":447,"lodash/includes":456,"lodash/isRegExp":469,"lodash/startsWith":483,"minimatch":493,"path":495,"slash":523,"util":553}],32:[function(require,module,exports){
 module.exports={
-  "_args": [
-    [
-      "babel-core@6.26.3",
-      "/Users/aartvanempel/Documents/streepgedicht"
-    ]
-  ],
-  "_from": "babel-core@6.26.3",
+  "_from": "babel-core@^6.26.3",
   "_id": "babel-core@6.26.3",
   "_inBundle": false,
   "_integrity": "sha512-6jyFLuDmeidKmUEb3NM+/yawG0M2bDZ9Z1qbZP59cyHLz8kYGKYwpJP0UwUKKUiTRNvxfLesJnTedqczP7cTDA==",
   "_location": "/babel-core",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "babel-core@6.26.3",
+    "raw": "babel-core@^6.26.3",
     "name": "babel-core",
     "escapedName": "babel-core",
-    "rawSpec": "6.26.3",
+    "rawSpec": "^6.26.3",
     "saveSpec": null,
-    "fetchSpec": "6.26.3"
+    "fetchSpec": "^6.26.3"
   },
   "_requiredBy": [
     "#DEV:/",
@@ -3720,12 +3714,14 @@ module.exports={
     "/babelify"
   ],
   "_resolved": "https://registry.npmjs.org/babel-core/-/babel-core-6.26.3.tgz",
-  "_spec": "6.26.3",
-  "_where": "/Users/aartvanempel/Documents/streepgedicht",
+  "_shasum": "b2e2f09e342d0f0c88e2f02e067794125e75c207",
+  "_spec": "babel-core@^6.26.3",
+  "_where": "/Users/aartvanempel/Documents/Code/STREEPGEDICHTEN",
   "author": {
     "name": "Sebastian McKenzie",
     "email": "sebmck@gmail.com"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "babel-code-frame": "^6.26.0",
     "babel-generator": "^6.26.0",
@@ -3747,6 +3743,7 @@ module.exports={
     "slash": "^1.0.0",
     "source-map": "^0.5.7"
   },
+  "deprecated": false,
   "description": "Babel compiler core.",
   "devDependencies": {
     "babel-helper-fixtures": "^6.26.2",
@@ -64937,6 +64934,8 @@ var Nav = function () {
     _createClass(Nav, [{
         key: '_onClick',
         value: function _onClick(e) {
+            document.querySelector('.loading-container').style.display = 'block';
+
             var category = e.target.dataset.category;
             _Observer2.default.publish(this, 'categoryChanged', category);
         }
@@ -65141,6 +65140,8 @@ var View = function () {
 
             this._contentParagraph.appendChild(documentFragment);
             this._contentContainer.prepend(this._contentParagraph);
+
+            document.querySelector('.loading-container').style.display = 'none';
         }
     }]);
 

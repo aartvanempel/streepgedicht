@@ -12,6 +12,8 @@ class Nav {
     }
 
     _onClick(e) {
+        document.querySelector('.loading-container').style.display = 'block';
+        
         const category = e.target.dataset.category;
         Observer.publish(this, 'categoryChanged', category);
     }

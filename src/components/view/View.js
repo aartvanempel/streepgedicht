@@ -38,6 +38,8 @@ class View {
 
         this._contentParagraph.appendChild(documentFragment)
         this._contentContainer.prepend(this._contentParagraph)
+
+        document.querySelector('.loading-container').style.display = 'none';
     }
 }
 
