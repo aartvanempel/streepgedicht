@@ -28,9 +28,6 @@ button {
     background-color: #ecf0f1;
     color: #222; }
 
-html {
-  -webkit-tap-highlight-color: transparent; }
-
 body {
   margin: 0;
   margin-bottom: 2rem; }
@@ -107,8 +104,6 @@ ul {
   .content-container p {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0;
