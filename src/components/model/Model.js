@@ -26,7 +26,8 @@ class Model {
                         .replace("Liveblog", "")
                         .replace("Transferupdates", "")
                         .replace("NUcheckt", "")
-                        .replace(/[.,()"':|]/g, '')
+                        .replace(/[.,()"':|]/g, '') // remove unwanted chars
+                        .replace(/\s+/g, ' ') // remove double spaces
                         .trim()
                 )
             })
