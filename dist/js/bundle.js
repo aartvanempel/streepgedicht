@@ -64884,13 +64884,19 @@ var Model = function () {
             });
         }
     }], [{
+        key: "cleanUpTitle",
+        value: function cleanUpTitle(title) {
+            return title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Video", "").replace("Weerbericht", "").replace("Liveblog", "").replace("Transferupdates", "").replace("NUcheckt", "").replace(/[’,()"':|]/g, '') // remove unwanted chars
+            .replace(/\s+/g, ' ') // remove double spaces
+            ;
+        }
+    }, {
         key: "processedData",
         value: function processedData(data) {
-            return data.items.slice(0, 7).map(function (entry) {
-                return entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Video", "").replace("Weerbericht", "").replace("Liveblog", "").replace("Transferupdates", "").replace("NUcheckt", "").replace(/[,()"':|]/g, '') // remove unwanted chars
-                .replace(/\s+/g, ' ') // remove double spaces
-                .trim() + ' ●';
-            }).join(' ').split(' ').map(function (text) {
+            return data.items.slice(0, 7).map(function (entry, index) {
+                return index < 6 ? Model.cleanUpTitle(entry.title).trim() + ' ●' : Model.cleanUpTitle(entry.title);
+            }) // add circle to end of title expect for last title
+            .join(' ').split(' ').map(function (text) {
                 return { label: text, selected: false };
             });
         }
