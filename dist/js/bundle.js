@@ -64887,9 +64887,9 @@ var Model = function () {
         key: "processedData",
         value: function processedData(data) {
             return data.items.slice(0, 7).map(function (entry) {
-                return entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Video", "").replace("Weerbericht", "").replace("Liveblog", "").replace("Transferupdates", "").replace("NUcheckt", "").replace(/[.,()"':|]/g, '') // remove unwanted chars
+                return entry.title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Video", "").replace("Weerbericht", "").replace("Liveblog", "").replace("Transferupdates", "").replace("NUcheckt", "").replace(/[,()"':|]/g, '') // remove unwanted chars
                 .replace(/\s+/g, ' ') // remove double spaces
-                .trim();
+                .trim() + ' ●';
             }).join(' ').split(' ').map(function (text) {
                 return { label: text, selected: false };
             });
