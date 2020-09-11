@@ -17,15 +17,23 @@ button {
   }
 
   &--achterklap {
-    background-color: blue;
+    background-color: #2980b9;
   }
 
   &--algemeen {
-    background-color: tomato;
+    background-color: #8e44ad;
   }
 
   &--sport {
-    background-color: #ffd300;
+    background-color: #27ae60;
+  }
+
+  &--tech {
+    background-color: #f39c12;
+  }
+
+  &--wetenschap {
+    background-color: #d35400;
   }
 
   &--reset {

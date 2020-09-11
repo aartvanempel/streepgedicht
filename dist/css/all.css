@@ -13,11 +13,15 @@ button {
   .btn--category {
     color: #fff; }
   .btn--achterklap {
-    background-color: blue; }
+    background-color: #2980b9; }
   .btn--algemeen {
-    background-color: tomato; }
+    background-color: #8e44ad; }
   .btn--sport {
-    background-color: #ffd300; }
+    background-color: #27ae60; }
+  .btn--tech {
+    background-color: #f39c12; }
+  .btn--wetenschap {
+    background-color: #d35400; }
   .btn--reset {
     background-color: #fff;
     color: #222; }
