@@ -4,8 +4,10 @@
 }
 
 .category-list {
-  display: flex;
+  > div {
+    display: flex;
   flex-direction: row;
+  }
 }
 
 .content-container {

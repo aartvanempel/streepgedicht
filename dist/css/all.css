@@ -103,7 +103,7 @@ ul {
   -ms-flex-direction: row;
       flex-direction: row; }
 
-.category-list {
+.category-list > div {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
