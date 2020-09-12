@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" viewBox="0 0 56 32">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <path fill="#222" d="M42.549 0H55.641V14.728H42.549zM0 17.244H9.819V31.972H0z" transform="translate(-16 -12) translate(16 12)"/>
+                <path fill="#FFD300" d="M0 0H39.276V14.728H0z" transform="translate(-16 -12) translate(16 12)"/>
+                <text fill="#222" font-family="SourceCodePro-Black, Source Code Pro" font-size="9.001" font-weight="700" transform="translate(-16 -12) translate(16 12)">
+                    <tspan x="3.273" y="10.636">STREEP</tspan>
+                </text>
+                <path fill="#FFD300" d="M13.092 17.244H55.641V31.972H13.092z" transform="translate(-16 -12) translate(16 12)"/>
+                <text fill="#222" font-family="SourceCodePro-Black, Source Code Pro" font-size="9.001" font-weight="700" transform="translate(-16 -12) translate(16 12)">
+                    <tspan x="16.365" y="27.881">GEDICHT</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

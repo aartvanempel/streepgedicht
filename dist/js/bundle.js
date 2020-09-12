@@ -65041,7 +65041,8 @@ var SaveToImage = function () {
         value: function _onClick() {
             (0, _html2canvas2.default)(document.querySelector('#main'), {
                 onclone: function onclone(clonedDoc) {
-                    clonedDoc.getElementById('tag-container').style.opacity = 1;
+                    var el = clonedDoc.getElementById('tag-container');
+                    el.style.opacity = 1;
                 },
                 scale: 6
             }).then(function (canvas) {

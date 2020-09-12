@@ -4,50 +4,24 @@ button {
 
 .btn {
   display: block;
-  width: 100%;
   border: none;
   outline: 0;
-  padding: .5rem;
-  font-size: 14px;
-  text-transform: uppercase;
+  padding: 0;
+  font-size: 16px;
+  text-transform: capitalize;
   font-family: 'Source Code Pro', monospace;
+  background-color: transparent;
+  cursor: pointer;
 
   &--category {
-    color: #fff;
-  }
-
-  &--achterklap {
-    background-color: #2980b9;
-  }
-
-  &--algemeen {
-    background-color: #8e44ad;
-  }
-
-  &--sport {
-    background-color: #27ae60;
-  }
-
-  &--tech {
-    background-color: #f39c12;
-  }
-
-  &--wetenschap {
-    background-color: #d35400;
-  }
-
-  &--reset {
-    background-color: #fff;
     color: #222;
   }
 
-  &--blackout {
-    background-color: #222;
-    color: #fff;
-  }
-
   &--save {
-    background-color: #ecf0f1;
+    margin: auto;
+    margin-top: -10px;
+    padding: 16px 32px;
+    background-color: #ffd300;
     color: #222;
   }
 }

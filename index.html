@@ -13,38 +13,64 @@
 
 <body>
 
-
-    <nav id='nav'>
-        <div class="category-list">
-            <div>
-                <button data-category='tech' class="btn btn--category btn--tech">tech</button>
-                <button data-category='algemeen' class="btn btn--category btn--algemeen">algemeen</button>
-                <button data-category='sport' class="btn btn--category btn--sport">sport</button>
+    <div>
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 56 32" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M42.549 0H55.641V14.728H42.549zM0 17.244H9.819V31.972H0z" fill="#222" />
+                            <path d="M0 0H39.276V14.728H0z" fill="#FFD300" />
+                            <text fill="#222" font-family="SourceCodePro-Black, Source Code Pro" font-size="9.001"
+                                font-weight="700">
+                                <tspan x="3.273" y="10.636">STREEP</tspan>
+                            </text>
+                            <path d="M13.092 17.244H55.641V31.972H13.092z" fill="#FFD300" />
+                            <text fill="#222" font-family="SourceCodePro-Black, Source Code Pro" font-size="9.001"
+                                font-weight="700">
+                                <tspan x="16.365" y="27.881">GEDICHT</tspan>
+                            </text>
+                        </g>
+                    </svg>
+                </div>
             </div>
-            <div>
-                <button data-category='achterklap' class="btn btn--category btn--achterklap">achterklap</button>
-                <button data-category='wetenschap' class="btn btn--category btn--wetenschap">wetenschap</button>
+            <div class="controls-container">
+                <div>
+                    <button id="blackout" class="btn">Streep</button>
+                </div>
+                <div>
+                    <button id="reset" class="btn">Reset</button>
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="info">
+                    <i class="far fa-info"></i>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <section class="controls">
-        <button id="reset" class="btn btn--reset">reset</button>
-        <button id="blackout" class="btn btn--blackout">streep</button>
-        <button id="save-to-image" class="btn btn--save">bewaar</button>
-    </section>
+    <div class="category-container">
+        <nav id='nav'>
+            <div class="category-list">
+                <div>
+                    <button data-category='tech' class="btn btn--category btn--tech">tech</button>
+                    <button data-category='algemeen' class="btn btn--category btn--algemeen">algemeen</button>
+                    <button data-category='sport' class="btn btn--category btn--sport">sport</button>
+                    <button data-category='achterklap' class="btn btn--category btn--achterklap">achterklap</button>
+                    <button data-category='wetenschap' class="btn btn--category btn--wetenschap">wetenschap</button>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <div class="col">
 
-        <div class='loading-container'>
-            <p>Loading...</p>
-        </div>
-
         <div class="main-container">
-            <!--
-            <div class="title">
-                <h1>Streepgedicht</h1>
-            </div> -->
+
+            <div class='loading-container'>
+                <p>Loading...</p>
+            </div>
 
             <div id="main">
                 <div id='content-container' class='content-container'>
@@ -61,9 +87,11 @@
 
         </div>
 
+        <div>
+            <button id="save-to-image" class="btn btn--save">bewaar</button>
+        </div>
+
     </div>
-
-
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>

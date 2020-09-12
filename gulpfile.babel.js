@@ -76,6 +76,12 @@ gulp.task('copy', () => {
         .pipe(gulp.dest('dist/img'))
 });
 
+// copy webfonts to dist
+gulp.task('copyFonts', () => {
+    gulp.src(['src/static/fontawesome/webfonts/*'])
+        .pipe(gulp.dest('dist/webfonts'))
+});
+
 // watch //
 gulp.task('watch', () => {
     gulp.watch('src/**/*.+(html|njk)', ['nunjucks']);
@@ -84,4 +90,4 @@ gulp.task('watch', () => {
 });
 
 // default //
-gulp.task('default', ['copy', 'browsersync', 'browserify', 'sass', 'watch']);
+gulp.task('default', ['copy', 'copyFonts', 'browsersync', 'browserify', 'sass', 'watch']);

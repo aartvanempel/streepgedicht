@@ -11,19 +11,20 @@ class SaveToImage {
     _onClick() {
         html2canvas(document.querySelector('#main'), {
             onclone: clonedDoc => {
-                clonedDoc.getElementById('tag-container').style.opacity = 1;
+                const el = clonedDoc.getElementById('tag-container');
+                el.style.opacity = 1;
             },
             scale: 6
         }).then(canvas => {
-                const getFullCanvas = canvas;
-                const link = document.createElement('a');
+            const getFullCanvas = canvas;
+            const link = document.createElement('a');
 
-                link.href = getFullCanvas.toDataURL("image/png");
-                link.download = 'streepgedicht.png';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
+            link.href = getFullCanvas.toDataURL("image/png");
+            link.download = 'streepgedicht.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     }
 }
 

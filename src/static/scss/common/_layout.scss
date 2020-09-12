@@ -8,17 +8,79 @@ body {
   max-width: 320px;
 }
 
+.main-container {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 1px;
+    width: 272px;
+    background-color: #eaeaea;
+  }
+}
+
 #main {
   padding: 16px;
 }
 
 #tag-container {
   opacity: 0;
+  
+  .tag,
+  .tag-logo {
+    cursor: default;
+  }
 }
 
 .loading-container {
   margin-top: 24px;
+  padding-top: 24px;
   text-align: center;
   font-family: 'Source Code Pro', monospace;
   font-size: 12px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eaeaea;
+
+  .logo-container {
+    .logo {
+      width: 56px;
+    }
+  }
+
+  .controls-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    
+    > div + div {
+      margin-left: 32px;
+    }
+  }
+
+  .info-container {
+     .info {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 32px;
+       height: 32px;
+       border-radius: 50%;
+       background-color: #ffd300;
+     }
+  }
+
 }
