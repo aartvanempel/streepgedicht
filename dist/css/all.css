@@ -145,11 +145,16 @@ ul {
 .category-list > div {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
 .category-list button {
-  margin-left: 24px; }
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px; }
 
 .content-container {
   margin: auto; }

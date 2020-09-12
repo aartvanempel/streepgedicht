@@ -7,11 +7,15 @@
 .category-list {
   > div {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
   }
 
   button {
-    margin-left: 24px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 }
 
