@@ -65039,6 +65039,7 @@ var SaveToImage = function () {
     _createClass(SaveToImage, [{
         key: '_onClick',
         value: function _onClick() {
+            window.scrollTo(0, 0);
             (0, _html2canvas2.default)(document.querySelector('#main'), {
                 onclone: function onclone(clonedDoc) {
                     var el = clonedDoc.getElementById('tag-container');
