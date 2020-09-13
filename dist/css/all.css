@@ -146,6 +146,7 @@ ul {
   -ms-flex-align: center;
       align-items: center;
   padding: 16px 24px;
+  padding-top: 0;
   cursor: pointer; }
   .category-active-container::after {
     content: '';
