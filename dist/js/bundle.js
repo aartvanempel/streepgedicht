@@ -64934,22 +64934,45 @@ var Nav = function () {
 
         this._element = element;
         this._loadingContainer = document.querySelector('.loading-container');
-        this._categoryButtons = [].concat(_toConsumableArray(this._element.querySelectorAll('[data-category]')));
+        this._activeCategoryContainer = this._element.querySelector('.category-active-container');
+        this._activeCategory = this._activeCategoryContainer.querySelector('.category-active');
+
+        this._optionsContainer = this._element.querySelector('.category-options');
+
+        this._categoryButtons = [].concat(_toConsumableArray(this._optionsContainer.querySelectorAll('[data-category]')));
 
         this._categoryButtons.forEach(function (button) {
             button.addEventListener('click', function (e) {
                 return _this._onClick(e);
             });
         });
+
+        this._activeCategoryContainer.addEventListener('click', function () {
+            return _this._onActiveCategoryClick();
+        });
     }
 
     _createClass(Nav, [{
+        key: '_updateActiveCategory',
+        value: function _updateActiveCategory(activeHtml) {
+            this._activeCategory.innerHTML = activeHtml;
+        }
+    }, {
         key: '_onClick',
         value: function _onClick(e) {
             this._loadingContainer.style.display = 'block';
 
+            this._updateActiveCategory(e.target.parentNode.innerHTML);
+
             var category = e.target.dataset.category;
             _Observer2.default.publish(this, 'categoryChanged', category);
+
+            this._element.classList.remove('show-options');
+        }
+    }, {
+        key: '_onActiveCategoryClick',
+        value: function _onActiveCategoryClick() {
+            this._element.classList.toggle('show-options');
         }
     }]);
 
@@ -65127,7 +65150,8 @@ var View = function () {
             new _SaveToImage2.default(document.querySelector('#save-to-image'));
 
             _Observer2.default.subscribe(nav, 'categoryChanged', function (category) {
-                return _Observer2.default.publish(_this, 'onCategoryChanged', category);
+                _this._contentContainer.innerHTML = '';
+                _Observer2.default.publish(_this, 'onCategoryChanged', category);
             });
             _Observer2.default.subscribe(reset, 'reset', function () {
                 return _Observer2.default.publish(_this, 'onReset');

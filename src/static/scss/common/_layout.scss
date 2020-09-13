@@ -8,28 +8,13 @@ body {
   max-width: 320px;
 }
 
-.main-container {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    height: 1px;
-    width: 272px;
-    background-color: #eaeaea;
-  }
-}
-
 #main {
   padding: 16px;
 }
 
 #tag-container {
   opacity: 0;
-  
+
   .tag,
   .tag-logo {
     cursor: default;
@@ -65,7 +50,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    
+
     > div + div {
       margin-left: 32px;
     }

@@ -21,7 +21,10 @@ class View {
         const blackout = new Blackout(document.querySelector('#blackout'))
         new SaveToImage(document.querySelector('#save-to-image'))
 
-        Observer.subscribe(nav, 'categoryChanged', category => Observer.publish(this, 'onCategoryChanged', category))
+        Observer.subscribe(nav, 'categoryChanged', category => {
+            this._contentContainer.innerHTML = ''
+            Observer.publish(this, 'onCategoryChanged', category)
+        })
         Observer.subscribe(reset, 'reset', () => Observer.publish(this, 'onReset'))
         Observer.subscribe(blackout, 'blackout', () => Observer.publish(this, 'onBlackout'))
     }
