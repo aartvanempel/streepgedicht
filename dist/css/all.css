@@ -176,9 +176,23 @@ ul {
   background-color: #fff;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2); }
   .category-options > div {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     padding: 16px 0; }
+    .category-options > div .icon {
+      transition: 150ms ease-in-out; }
+    .category-options > div:hover .icon {
+      transform: scale(1.1); }
+    .category-options > div button {
+      color: #222; }
+      .category-options > div button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
   .category-options > div + div {
     border-top: 1px solid #eaeaea; }
   .category-options.show {
@@ -201,6 +215,15 @@ ul {
     .content-container p span {
       margin: 4px;
       cursor: pointer; }
+
+.show-options .category-active::before {
+  content: '';
+  position: fixed;
+  top: 64px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: default; }
 
 .show-options .category-options {
   display: block; }

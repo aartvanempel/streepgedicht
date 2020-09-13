@@ -17,6 +17,7 @@ class Nav {
         });
 
         this._activeCategoryContainer.addEventListener('click', () => this._onActiveCategoryClick())
+
     }
 
     _updateActiveCategory(activeHtml) {
