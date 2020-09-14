@@ -65119,14 +65119,7 @@ var SaveToImage = function () {
                 },
                 scale: 6
             }).then(function (canvas) {
-                var getFullCanvas = canvas;
-                var link = document.createElement('a');
-
-                link.href = getFullCanvas.toDataURL("image/png");
-                link.download = 'streepgedicht.png';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                return window.open(canvas.toDataURL("image/png"));
             });
         }
     }]);
