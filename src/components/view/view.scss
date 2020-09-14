@@ -118,6 +118,10 @@
 }
 
 .show-options {
+  .arrow i {
+    transform: rotate(180deg) translateY(-4px);
+  }
+
   .category-active {
     &::before {
       content: '';

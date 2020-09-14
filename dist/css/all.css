@@ -247,6 +247,9 @@ ul {
       margin: 4px;
       cursor: pointer; }
 
+.show-options .arrow i {
+  transform: rotate(180deg) translateY(-4px); }
+
 .show-options .category-active::before {
   content: '';
   position: fixed;
