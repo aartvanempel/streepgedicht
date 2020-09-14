@@ -1,35 +1,14 @@
+* {
+  font-weight: 700;
+  color: #222;
+}
+
 ul {
   padding: 0;
   margin: 0;
 
   li {
     background-color: yellow;
-  }
-}
-
-.title {
-  position: relative;
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-bottom: 8px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    background-color: #222;
-    left: 0;
-    right: 0;
-    bottom: -14px;
-  }
-
-  h1 {
-    color: #222;
-    margin-bottom: 0;
-    font-size: 28px;
-    font-family: 'Source Code Pro', monospace;
-    // text-transform: uppercase;
-    // font-family: 'Lora', serif;
   }
 }
 

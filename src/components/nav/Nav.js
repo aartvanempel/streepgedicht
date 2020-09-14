@@ -7,9 +7,7 @@ class Nav {
         this._loadingContainer = document.querySelector('.loading-container');
         this._activeCategoryContainer = this._element.querySelector('.category-active-container');
         this._activeCategory = this._activeCategoryContainer.querySelector('.category-active');
-
         this._optionsContainer = this._element.querySelector('.category-options');
-
         this._categoryButtons = [...this._optionsContainer.querySelectorAll('[data-category]')];
 
         this._categoryButtons.forEach(button => {

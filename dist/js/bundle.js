@@ -64720,7 +64720,7 @@ var Blackout = function () {
 
 exports.default = Blackout;
 
-},{"utils/Observer":603}],595:[function(require,module,exports){
+},{"utils/Observer":604}],595:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64808,7 +64808,55 @@ var Controller = function () {
 
 exports.default = Controller;
 
-},{"utils/Observer":603}],596:[function(require,module,exports){
+},{"utils/Observer":604}],596:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Observer = require('utils/Observer');
+
+var _Observer2 = _interopRequireDefault(_Observer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Info = function () {
+    function Info() {
+        var _this = this;
+
+        _classCallCheck(this, Info);
+
+        this._infoIcon = document.querySelector('.info');
+        this._infoOverlay = document.querySelector('.info-overlay');
+        this._closeIcon = this._infoOverlay.querySelector('.close');
+
+        this._infoIcon.addEventListener('click', function () {
+            return _this._toggleInfo();
+        });
+        this._closeIcon.addEventListener('click', function () {
+            return _this._toggleInfo();
+        });
+    }
+
+    _createClass(Info, [{
+        key: '_toggleInfo',
+        value: function _toggleInfo() {
+            this._infoIcon.classList.toggle('open');
+            this._infoOverlay.classList.toggle('open');
+        }
+    }]);
+
+    return Info;
+}();
+
+exports.default = Info;
+
+},{"utils/Observer":604}],597:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64907,7 +64955,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"utils/utils":604}],597:[function(require,module,exports){
+},{"utils/utils":605}],598:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64936,9 +64984,7 @@ var Nav = function () {
         this._loadingContainer = document.querySelector('.loading-container');
         this._activeCategoryContainer = this._element.querySelector('.category-active-container');
         this._activeCategory = this._activeCategoryContainer.querySelector('.category-active');
-
         this._optionsContainer = this._element.querySelector('.category-options');
-
         this._categoryButtons = [].concat(_toConsumableArray(this._optionsContainer.querySelectorAll('[data-category]')));
 
         this._categoryButtons.forEach(function (button) {
@@ -64981,7 +65027,7 @@ var Nav = function () {
 
 exports.default = Nav;
 
-},{"utils/Observer":603}],598:[function(require,module,exports){
+},{"utils/Observer":604}],599:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -65027,7 +65073,7 @@ var Reset = function () {
 
 exports.default = Reset;
 
-},{"utils/Observer":603}],599:[function(require,module,exports){
+},{"utils/Observer":604}],600:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -65090,7 +65136,7 @@ var SaveToImage = function () {
 
 exports.default = SaveToImage;
 
-},{"babel-core":4,"html2canvas":269,"utils/Observer":603}],600:[function(require,module,exports){
+},{"babel-core":4,"html2canvas":269,"utils/Observer":604}],601:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -65119,6 +65165,10 @@ var _Word = require('word/Word');
 
 var _Word2 = _interopRequireDefault(_Word);
 
+var _Info = require('info/Info');
+
+var _Info2 = _interopRequireDefault(_Info);
+
 var _SaveToImage = require('saveToImage/SaveToImage');
 
 var _SaveToImage2 = _interopRequireDefault(_SaveToImage);
@@ -65135,6 +65185,7 @@ var View = function () {
         this._loadingContainer = document.querySelector('.loading-container');
         this._contentContainer = document.querySelector('.content-container');
         this._contentParagraph = document.createElement('p');
+        this._infoContainer = document.querySelector('.info-overlay');
 
         this._init();
     }
@@ -65147,6 +65198,7 @@ var View = function () {
             var nav = new _Nav2.default(document.querySelector('#nav'));
             var reset = new _Reset2.default(document.querySelector('#reset'));
             var blackout = new _Blackout2.default(document.querySelector('#blackout'));
+            var info = new _Info2.default();
             new _SaveToImage2.default(document.querySelector('#save-to-image'));
 
             _Observer2.default.subscribe(nav, 'categoryChanged', function (category) {
@@ -65189,7 +65241,7 @@ var View = function () {
 
 exports.default = View;
 
-},{"blackout/Blackout":594,"nav/Nav":597,"reset/Reset":598,"saveToImage/SaveToImage":599,"utils/Observer":603,"word/Word":601}],601:[function(require,module,exports){
+},{"blackout/Blackout":594,"info/Info":596,"nav/Nav":598,"reset/Reset":599,"saveToImage/SaveToImage":600,"utils/Observer":604,"word/Word":602}],602:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -65237,7 +65289,7 @@ var Word = function () {
 
 exports.default = Word;
 
-},{"utils/Observer":603}],602:[function(require,module,exports){
+},{"utils/Observer":604}],603:[function(require,module,exports){
 'use strict';
 
 var _Model = require('model/Model');
@@ -65260,7 +65312,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new _Controller2.default(model, view);
 });
 
-},{"controller/Controller":595,"model/Model":596,"view/View":600}],603:[function(require,module,exports){
+},{"controller/Controller":595,"model/Model":597,"view/View":601}],604:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65449,7 +65501,7 @@ var Observer = function () {
 
 exports.default = new Observer();
 
-},{}],604:[function(require,module,exports){
+},{}],605:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65478,6 +65530,6 @@ function targetIsElement(target, element) {
     return target.tagName.toLowerCase() === element;
 }
 
-},{"rss-parser":517}]},{},[602])
+},{"rss-parser":517}]},{},[603])
 
 //# sourceMappingURL=bundle.js.map

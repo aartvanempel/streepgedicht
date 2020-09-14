@@ -3,6 +3,7 @@ import Nav from 'nav/Nav'
 import Blackout from 'blackout/Blackout'
 import Reset from 'reset/Reset'
 import Word from 'word/Word'
+import Info from 'info/Info'
 import SaveToImage from 'saveToImage/SaveToImage'
 
 class View {
@@ -11,6 +12,7 @@ class View {
         this._loadingContainer = document.querySelector('.loading-container')
         this._contentContainer = document.querySelector('.content-container')
         this._contentParagraph = document.createElement('p')
+        this._infoContainer = document.querySelector('.info-overlay')
 
         this._init()
     }
@@ -19,6 +21,7 @@ class View {
         const nav = new Nav(document.querySelector('#nav'))
         const reset = new Reset(document.querySelector('#reset'))
         const blackout = new Blackout(document.querySelector('#blackout'))
+        const info = new Info();
         new SaveToImage(document.querySelector('#save-to-image'))
 
         Observer.subscribe(nav, 'categoryChanged', category => {
