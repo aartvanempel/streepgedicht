@@ -65113,7 +65113,7 @@ var SaveToImage = function () {
         value: function _onClick() {
             window.scrollTo(0, 0);
 
-            var newWindow = window.open(window.location.href + 'afbeelding');
+            var newWindow = window.open(window.location.href);
 
             (0, _html2canvas2.default)(document.querySelector('#main'), {
                 onclone: function onclone(clonedDoc) {
@@ -65122,7 +65122,7 @@ var SaveToImage = function () {
                 },
                 scale: 6
             }).then(function (canvas) {
-                newWindow.document.write('<img src=' + canvas.toDataURL("image/png") + '>');
+                newWindow.location.href = canvas.toDataURL("image/png");
                 newWindow.focus();
             });
         }

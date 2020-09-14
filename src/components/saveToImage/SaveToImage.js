@@ -11,7 +11,7 @@ class SaveToImage {
     _onClick() {
         window.scrollTo(0, 0);
 
-        const newWindow = window.open(window.location.href + 'afbeelding')
+        const newWindow = window.open(window.location.href)
 
             html2canvas(document.querySelector('#main'), {
                 onclone: clonedDoc => {
@@ -20,7 +20,7 @@ class SaveToImage {
                 },
                 scale: 6
             }).then(canvas => {
-                newWindow.document.write(`<img src=${canvas.toDataURL("image/png")}>`);
+                newWindow.location.href = canvas.toDataURL("image/png");
                 newWindow.focus();
             });
     }
