@@ -92,7 +92,7 @@ body {
   .info-overlay.open {
     display: block; }
   .info-overlay > .info-content {
-    position: fixed;
+    position: absolute;
     top: 76px;
     left: 50%;
     transform: translateX(-50%);
