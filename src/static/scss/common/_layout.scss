@@ -40,8 +40,9 @@ body {
 
   .logo-container {
     .logo {
-      display: flex;
-      width: 56px;
+      img {
+        width: 56px;
+      }
     }
   }
 
@@ -98,10 +99,8 @@ body {
     transform: translateX(-50%);
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    max-width: 320px;
-    margin: auto;
-    margin-left: 8px;
-    margin-right: 8px;
+    max-width: 272px;
+    width: 100%;
     padding: 24px 16px;
     font-family: 'Source Code Pro', monospace;
 
