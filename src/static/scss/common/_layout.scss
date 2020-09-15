@@ -42,6 +42,8 @@ body {
 
   .logo-container {
     .logo {
+      display: flex;
+
       img {
         width: 56px;
       }
