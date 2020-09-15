@@ -1,6 +1,4 @@
-import Observer from 'utils/Observer'
 import html2canvas from 'html2canvas'
-import { transformFile } from 'babel-core'
 
 class SaveToImage {
     constructor(element) {
@@ -9,20 +7,22 @@ class SaveToImage {
     }
 
     _onClick() {
-        window.scrollTo(0, 0);
+        html2canvas(document.querySelector('#main'), {
+            onclone: clonedDoc => {
+                const el = clonedDoc.getElementById('tag-container');
+                el.style.opacity = 1;
+            },
+            scale: 6
+        }).then(canvas => {
+            const getFullCanvas = canvas;
+            const link = document.createElement('a');
 
-        const newWindow = window.open(window.location.href)
-
-            html2canvas(document.querySelector('#main'), {
-                onclone: clonedDoc => {
-                    const el = clonedDoc.getElementById('tag-container');
-                    el.style.opacity = 1;
-                },
-                scale: 6
-            }).then(canvas => {
-                newWindow.location.href = canvas.toDataURL("image/png");
-                newWindow.focus();
-            });
+            link.href = getFullCanvas.toDataURL("image/png");
+            link.download = 'streepgedicht.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     }
 }
 
