@@ -59,17 +59,6 @@ function bundle() {
     return b;
 }
 
-// nunjucks //
-gulp.task('nunjucks', () => {
-    return gulp.src('src/pages/**/*.+(html|njk)')
-        .pipe(nunjucksRender({
-            path: ['src/layout/', 'src/components']
-        }))
-        .pipe(gulp.dest('./'))
-        .pipe(gulp.dest('dist/'))
-        .pipe(browsersync.reload({stream: true}));
-});
-
 // copy img to dist //
 gulp.task('copy', () => {
     gulp.src(['src/static/img/*'])
@@ -84,7 +73,6 @@ gulp.task('copyFonts', () => {
 
 // watch //
 gulp.task('watch', () => {
-    gulp.watch('src/**/*.+(html|njk)', ['nunjucks']);
     gulp.watch('src/static/img/*', ['copy']);
     gulp.watch('src/**/*.scss', ['sass']);
 });
