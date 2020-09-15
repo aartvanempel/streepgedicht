@@ -7,6 +7,7 @@ class SaveToImage {
     }
 
     _onClick() {
+        window.scrollTo(0, 0);
         html2canvas(document.querySelector('#main'), {
             onclone: clonedDoc => {
                 const el = clonedDoc.getElementById('tag-container');
