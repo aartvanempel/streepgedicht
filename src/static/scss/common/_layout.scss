@@ -32,10 +32,10 @@ body {
 
   .dot {
     opacity: 0;
-    animation: dot 1.3s infinite;
+    animation: dot .6s infinite;
 
     &--one {
-      animation-delay: 0.0s;
+      animation-delay: 0.1s;
     }
 
     &--two {

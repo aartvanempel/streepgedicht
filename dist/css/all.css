@@ -47,9 +47,9 @@ body {
   font-size: 12px; }
   .loading-container .dot {
     opacity: 0;
-    animation: dot 1.3s infinite; }
+    animation: dot .6s infinite; }
     .loading-container .dot--one {
-      animation-delay: 0.0s; }
+      animation-delay: 0.1s; }
     .loading-container .dot--two {
       animation-delay: 0.2s; }
     .loading-container .dot--three {
