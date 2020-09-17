@@ -74,8 +74,10 @@ body {
   margin-bottom: 24px;
   padding: 12px 16px;
   border-bottom: 1px solid #eaeaea; }
-  .header .logo-container .logo img {
-    width: 56px; }
+  .header .logo-container {
+    height: 32px; }
+    .header .logo-container .logo img {
+      width: 56px; }
   .header .controls-container {
     position: absolute;
     top: 50%;
@@ -263,7 +265,7 @@ ul {
       cursor: pointer; }
 
 .show-options .arrow i {
-  transform: rotate(180deg) translateY(-4px); }
+  transform: rotate(180deg) translateY(-2px); }
 
 .show-options .category-active::before {
   content: '';
