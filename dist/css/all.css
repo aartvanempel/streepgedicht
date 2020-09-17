@@ -45,6 +45,23 @@ body {
   text-align: center;
   font-family: 'Source Code Pro', monospace;
   font-size: 12px; }
+  .loading-container .dot {
+    opacity: 0;
+    animation: dot 1.3s infinite; }
+    .loading-container .dot--one {
+      animation-delay: 0.0s; }
+    .loading-container .dot--two {
+      animation-delay: 0.2s; }
+    .loading-container .dot--three {
+      animation-delay: 0.3s; }
+
+@keyframes dot {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .header {
   position: relative;
