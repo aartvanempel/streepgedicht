@@ -24,7 +24,7 @@ class Model {
                 .replace("Transferupdates", "")
                 .replace("NUcheckt", "")
                 .replace("NUjij", "")
-                .replace(/[’,()"':|?!]/g, '') // remove unwanted chars
+                .replace(/[’()"':|?!]/g, '') // remove unwanted chars
                 .replace(/\s+/g, ' ') // remove double spaces
         )
     }
