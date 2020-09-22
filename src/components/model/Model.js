@@ -26,6 +26,7 @@ class Model {
                 .replace("NUjij", "")
                 .replace(/[’()"':|?!]/g, '') // remove unwanted chars
                 .replace(/\s+/g, ' ') // remove double spaces
+                .replace(/,(?=\D)/, '') // remove comma if it's the last char
         )
     }
 

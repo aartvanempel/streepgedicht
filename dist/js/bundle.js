@@ -22654,6 +22654,7 @@ var Model = function () {
         value: function cleanUpTitle(title) {
             return title.replace("Achterklap-updates", "").replace("Podcast", "").replace("Video", "").replace("Weerbericht", "").replace("Liveblog", "").replace("Transferupdates", "").replace("NUcheckt", "").replace("NUjij", "").replace(/[’()"':|?!]/g, '') // remove unwanted chars
             .replace(/\s+/g, ' ') // remove double spaces
+            .replace(/,(?=\D)/, '') // remove comma if it's the last char
             ;
         }
     }, {
