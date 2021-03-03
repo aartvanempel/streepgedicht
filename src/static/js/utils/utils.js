@@ -3,7 +3,7 @@ const rss = new RSS()
 
 export function getFeed(url) {
     return new Promise((resolve, reject) => {
-        rss.parseURL("https://cors-anywhere.herokuapp.com/" + url, (error, data) => {
+        rss.parseURL(url, (error, data) => {
             error ? reject(error) : resolve(data);
         });
     });
