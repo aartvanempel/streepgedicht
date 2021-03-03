@@ -23233,7 +23233,7 @@ var rss = new _rssParser2.default();
 
 function getFeed(url) {
     return new Promise(function (resolve, reject) {
-        rss.parseURL("https://cors-anywhere.herokuapp.com/" + url, function (error, data) {
+        rss.parseURL("https://cors.bridged.cc/" + url, function (error, data) {
             error ? reject(error) : resolve(data);
         });
     });
