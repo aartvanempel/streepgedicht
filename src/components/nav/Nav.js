@@ -1,10 +1,9 @@
-import Observer from 'utils/Observer';
+import Observer from '../../static/js/utils/Observer';
 
 class Nav {
 
     constructor(element) {
         this._element = element;
-        this._loadingContainer = document.querySelector('.loading-container');
         this._activeCategoryContainer = this._element.querySelector('.category-active-container');
         this._activeCategory = this._activeCategoryContainer.querySelector('.category-active');
         this._optionsContainer = this._element.querySelector('.category-options');
@@ -23,8 +22,6 @@ class Nav {
     }
 
     _onClick(e) {
-        this._loadingContainer.style.display = 'block';
-
         this._updateActiveCategory(e.target.parentNode.innerHTML)
 
         const category = e.target.dataset.category;

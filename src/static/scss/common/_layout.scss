@@ -23,6 +23,24 @@ body {
   }
 }
 
+[hidden] {
+  display: none !important;
+}
+
+.error-container {
+  margin-top: 24px;
+  padding: 24px 16px 0;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+
+  .btn {
+    margin: 16px auto 0;
+    padding: 12px 24px;
+    background-color: #ffd300;
+  }
+}
+
 .loading-container {
   margin-top: 24px;
   padding-top: 24px;
@@ -138,10 +156,13 @@ body {
       font-weight: 700;
     }
 
-    i {
+    .close {
       position: absolute;
-      top: 24px;
-      right: 16px;
+      top: 20px;
+      right: 12px;
+      padding: 4px;
+      border: none;
+      background: none;
       font-size: 24px;
       cursor: pointer;
     }

@@ -1,4 +1,4 @@
-import Observer from 'utils/Observer'
+import Observer from '../../static/js/utils/Observer'
 
 class Reset {
 

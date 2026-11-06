@@ -1,16 +1,17 @@
-import { getFeed } from 'utils/utils'
+import { getFeed } from '../../static/js/utils/utils'
 
 class Model {
-    constructor(url) {
-        this._url = url
+    constructor() {
+        this._data = []
     }
 
     async getData(category) {
-        const response = await getFeed(this._url + category)
+        const response = await getFeed(category)
+        return Model.processedData(response)
+    }
 
-        this._data = Model.processedData(response)
-
-        return this._data
+    setData(data) {
+        this._data = data
     }
 
     static cleanUpTitle(title) {

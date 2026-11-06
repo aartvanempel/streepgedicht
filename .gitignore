@@ -1,2 +1,4 @@
 /node_modules
+/dist
+/public/feeds
 .DS_Store

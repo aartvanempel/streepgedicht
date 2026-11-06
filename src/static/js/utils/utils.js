@@ -1,15 +1,9 @@
-import RSS from 'rss-parser';
-const rss = new RSS()
-
-export function getFeed(url) {
-    return new Promise((resolve, reject) => {
-        rss.parseURL("https://cors.bridged.cc/" + url, (error, data) => {
-            error ? reject(error) : resolve(data);
-        });
-    });
-
-}
-
-export function targetIsElement(target, element) {
-    return target.tagName.toLowerCase() === element;
+// De feeds worden tijdens de build opgehaald (scripts/fetch-feeds.js)
+// en staan als JSON naast de site.
+export async function getFeed(category) {
+    const response = await fetch(`${import.meta.env.BASE_URL}feeds/${category}.json`);
+    if (!response.ok) {
+        throw new Error(`Feed '${category}' niet gevonden (${response.status})`);
+    }
+    return response.json();
 }

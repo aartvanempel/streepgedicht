@@ -1,15 +1,16 @@
-import Observer from 'utils/Observer'
-import Nav from 'nav/Nav'
-import Blackout from 'blackout/Blackout'
-import Reset from 'reset/Reset'
-import Word from 'word/Word'
-import Info from 'info/Info'
-import SaveToImage from 'saveToImage/SaveToImage'
+import Observer from '../../static/js/utils/Observer'
+import Nav from '../nav/Nav'
+import Blackout from '../blackout/Blackout'
+import Reset from '../reset/Reset'
+import Word from '../word/Word'
+import Info from '../info/Info'
+import SaveToImage from '../saveToImage/SaveToImage'
 
 class View {
     constructor() {
         this._data = null
         this._loadingContainer = document.querySelector('.loading-container')
+        this._errorContainer = document.querySelector('.error-container')
         this._contentContainer = document.querySelector('.content-container')
         this._contentParagraph = document.createElement('p')
         this._infoContainer = document.querySelector('.info-overlay')
@@ -24,12 +25,23 @@ class View {
         const info = new Info();
         new SaveToImage(document.querySelector('#save-to-image'))
 
-        Observer.subscribe(nav, 'categoryChanged', category => {
-            this._contentContainer.innerHTML = ''
-            Observer.publish(this, 'onCategoryChanged', category)
-        })
+        Observer.subscribe(nav, 'categoryChanged', category => Observer.publish(this, 'onCategoryChanged', category))
         Observer.subscribe(reset, 'reset', () => Observer.publish(this, 'onReset'))
         Observer.subscribe(blackout, 'blackout', () => Observer.publish(this, 'onBlackout'))
+
+        this._errorContainer.querySelector('button')
+            .addEventListener('click', () => Observer.publish(this, 'onRetry'))
+    }
+
+    showLoading() {
+        this._contentContainer.innerHTML = ''
+        this._errorContainer.hidden = true
+        this._loadingContainer.hidden = false
+    }
+
+    showError() {
+        this._loadingContainer.hidden = true
+        this._errorContainer.hidden = false
     }
 
     setContent(data) {
@@ -46,7 +58,7 @@ class View {
         this._contentParagraph.appendChild(documentFragment)
         this._contentContainer.prepend(this._contentParagraph)
 
-        this._loadingContainer.style.display = 'none';
+        this._loadingContainer.hidden = true
     }
 }
 

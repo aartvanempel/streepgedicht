@@ -1,25 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177926711-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-177926711-1');
-    </script>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streepgedicht</title>
-    <!-- <link rel='icon' type='image/png' href='./img/FFFFFF-0.png' /> -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./dist/css/all.css">
 </head>
 
 <body>
@@ -28,7 +15,7 @@
         <div class="header">
             <div class="logo-container">
                 <div class="logo">
-                    <img src="./dist/img/streepgedicht-logo.png" alt="streepgedicht">
+                    <img src="./src/static/img/streepgedicht-logo.png" alt="streepgedicht">
                 </div>
             </div>
             <div class="controls-container">
@@ -41,7 +28,7 @@
             </div>
             <div class="info-container">
                 <div class="info">
-                    <i class="far fa-info"></i>
+                    <i class="fa-solid fa-info"></i>
                 </div>
             </div>
         </div>
@@ -52,62 +39,62 @@
             <div class="category-active-container">
                 <div class="category-active">
                     <div class="icon">
-                        <i class="far fa-comments"></i>
+                        <i class="fa-regular fa-comments"></i>
                     </div>
 
                     <button class="btn btn--category">achterklap</button>
                 </div>
 
                 <div class="arrow">
-                    <i class="fas fa-caret-down"></i>
+                    <i class="fa-solid fa-caret-down"></i>
                 </div>
             </div>
             <div class="category-options">
                 <div>
                     <div class="icon">
-                        <i class="far fa-newspaper"></i>
+                        <i class="fa-regular fa-newspaper"></i>
                     </div>
                     <button data-category='algemeen' class="btn btn--category btn--algemeen">algemeen</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="fas fa-sim-card"></i>
+                        <i class="fa-solid fa-sim-card"></i>
                     </div>
                     <button data-category='tech' class="btn btn--category btn--tech">tech</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="far fa-comments"></i>
+                        <i class="fa-regular fa-comments"></i>
                     </div>
                     <button data-category='achterklap' class="btn btn--category btn--achterklap">achterklap</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="fas fa-microscope"></i>
+                        <i class="fa-solid fa-microscope"></i>
                     </div>
                     <button data-category='wetenschap' class="btn btn--category btn--wetenschap">wetenschap</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="fas fa-running"></i>
+                        <i class="fa-solid fa-person-running"></i>
                     </div>
                     <button data-category='sport' class="btn btn--category btn--sport">sport</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="fas fa-music"></i>
+                        <i class="fa-solid fa-music"></i>
                     </div>
                     <button data-category='muziek' class="btn btn--category">muziek</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="fas fa-heartbeat"></i>
+                        <i class="fa-solid fa-heart-pulse"></i>
                     </div>
                     <button data-category='gezondheid' class="btn btn--category">gezondheid</button>
                 </div>
                 <div>
                     <div class="icon">
-                        <i class="fas fa-sack-dollar"></i>
+                        <i class="fa-solid fa-sack-dollar"></i>
                     </div>
                     <button data-category='economie' class="btn btn--category">economie</button>
                 </div>
@@ -118,6 +105,11 @@
     <div class="col">
 
         <div class="main-container">
+
+            <div class="error-container" hidden>
+                <p>Het nieuws kon niet worden geladen.</p>
+                <button class="btn">Probeer opnieuw</button>
+            </div>
 
             <div class='loading-container'>
                 <p>Nieuws ophalen<span class="dot dot--one">.</span><span class="dot dot--two">.</span><span class="dot dot--three">.</span></p>
@@ -148,7 +140,7 @@
         <div class="info-content">
             <div>
                 <h1>Over ons</h1>
-                <i class='far fa-times close'></i>
+                <button class="close" aria-label="Sluiten"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <p>
                 Ben je soms ook een beetje klaar met de nieuwsberichten over het vergaan van de wereld? Streep het
@@ -172,8 +164,7 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
-    <script src="./dist/js/bundle.js"></script>
+    <script type="module" src="./src/static/js/main.js"></script>
 </body>
 
 </html>

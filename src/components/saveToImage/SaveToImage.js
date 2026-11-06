@@ -1,12 +1,12 @@
-import html2canvas from 'html2canvas'
-
 class SaveToImage {
     constructor(element) {
         this._element = element
         this._element.addEventListener('click', () => this._onClick())
     }
 
-    _onClick() {
+    async _onClick() {
+        // Pas laden als het nodig is: html2canvas is het grootste deel van de bundel.
+        const { default: html2canvas } = await import('html2canvas');
         window.scrollTo(0, 0);
         html2canvas(document.querySelector('#main'), {
             onclone: clonedDoc => {

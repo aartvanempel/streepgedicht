@@ -1,14 +1,8 @@
-
-
 // common
-@import "common/buttons";
-@import "common/colors";
-@import "common/constants";
-@import "common/layout";
-@import "common/typography";
+@use "common/buttons";
+@use "common/layout";
+@use "common/typography";
 
-// components //
-@import "../../components/word/word";
-@import "../../components/view/view";
-
-@import "../../static/fontawesome/css/all";
+// components
+@use "../../components/word/word";
+@use "../../components/view/view";
