@@ -1,5 +1,12 @@
 import { getFeed } from '../../static/js/utils/utils'
 
+const ITEMS = 7
+
+// Labels die nu.nl voor een kop zet (bijv. "Video | ..."). Alleen als los woord
+// verwijderd, zodat bijvoorbeeld "Videoclip" heel blijft.
+const LABELS = ['Achterklap-updates', 'Podcast', 'Video', 'Weerbericht', 'Liveblog', 'Transferupdates', 'NUcheckt', 'NUjij']
+const LABEL_PATTERN = new RegExp(`(^|\\s)(${LABELS.join('|')})(?=[\\s:|]|$)`, 'g')
+
 class Model {
     constructor() {
         this._data = []
@@ -7,9 +14,10 @@ class Model {
 
     async getData(category) {
         const response = await getFeed(category)
+        const items = response.items.slice(0, ITEMS)
         return {
-            words: Model.processedData(response),
-            sources: response.items.slice(0, 7).filter(item => item.link),
+            words: Model.processedData(items),
+            sources: items.filter(item => item.link),
         }
     }
 
@@ -18,29 +26,23 @@ class Model {
     }
 
     static cleanUpTitle(title) {
-        return (
-            title
-                .replace("Achterklap-updates", "")
-                .replace("Podcast", "")
-                .replace("Video", "")
-                .replace("Weerbericht", "")
-                .replace("Liveblog", "")
-                .replace("Transferupdates", "")
-                .replace("NUcheckt", "")
-                .replace("NUjij", "")
-                .replace(/[’()"':|?!]/g, '') // remove unwanted chars
-                .replace(/\s+/g, ' ') // remove double spaces
-                .replace(/,(?=\D)/, '') // remove comma if it's the last char
-        )
+        return title
+            .replace(LABEL_PATTERN, '$1')
+            .replace(/[()"“”:|?!]/g, '')               // leestekens die het gedicht rommelig maken
+            .replace(/['‘’](?!\p{L})|(?<!\p{L})['‘’]/gu, '') // aanhalingstekens weg, maar "auto's" blijft heel
+            .replace(/,(?!\d)/g, '')                     // komma's weg, behalve in getallen (1,5)
+            .replace(/\s+/g, ' ')
+            .trim()
     }
 
-    static processedData(data) {
-        return data.items
-            .slice(0, 7)
-            .map((entry, index) => index < 6 ? Model.cleanUpTitle(entry.title).trim() + ' ●' : Model.cleanUpTitle(entry.title)) // add circle to end of title expect for last title
-            .join(' ')
+    // Alle koppen achter elkaar, gescheiden door een bolletje, als losse woorden.
+    static processedData(items) {
+        return items
+            .map(item => Model.cleanUpTitle(item.title))
+            .filter(Boolean)
+            .join(' ● ')
             .split(' ')
-            .map(text => ({ label: text, selected: false }))
+            .map(label => ({ label, selected: false }))
     }
 
     toggleSelected(item) {

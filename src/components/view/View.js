@@ -8,12 +8,11 @@ import SaveToImage from '../saveToImage/SaveToImage'
 
 class View {
     constructor() {
-        this._data = null
+        this._words = []
         this._loadingContainer = document.querySelector('.loading-container')
         this._errorContainer = document.querySelector('.error-container')
-        this._contentContainer = document.querySelector('.content-container')
+        this._contentContainer = document.querySelector('#content-container')
         this._contentParagraph = document.createElement('p')
-        this._infoContainer = document.querySelector('.info-overlay')
         this._sourcesContainer = document.querySelector('.sources')
         this._sourcesList = this._sourcesContainer.querySelector('ol')
 
@@ -24,7 +23,7 @@ class View {
         const nav = new Nav(document.querySelector('#nav'))
         const reset = new Reset(document.querySelector('#reset'))
         const blackout = new Blackout(document.querySelector('#blackout'))
-        const info = new Info();
+        new Info()
         new SaveToImage(document.querySelector('#save-to-image'))
 
         Observer.subscribe(nav, 'categoryChanged', category => Observer.publish(this, 'onCategoryChanged', category))
@@ -36,7 +35,7 @@ class View {
     }
 
     showLoading() {
-        this._contentContainer.innerHTML = ''
+        this._contentContainer.replaceChildren()
         this._errorContainer.hidden = true
         this._sourcesContainer.hidden = true
         this._loadingContainer.hidden = false
@@ -47,21 +46,21 @@ class View {
         this._errorContainer.hidden = false
     }
 
-    setContent(data) {
-        this._data = data
-        this._contentParagraph.innerHTML = ''
-        const documentFragment = document.createDocumentFragment()
-
-        this._data.forEach(item => {
+    setContent(items) {
+        this._words = items.map(item => {
             const word = new Word(item)
             Observer.subscribe(word, 'wordClick', () => Observer.publish(this, 'onWordClick', item))
-            documentFragment.appendChild(word.element)
+            return word
         })
 
-        this._contentParagraph.appendChild(documentFragment)
-        this._contentContainer.prepend(this._contentParagraph)
-
+        this._contentParagraph.replaceChildren(...this._words.map(word => word.element))
+        this._contentContainer.replaceChildren(this._contentParagraph)
         this._loadingContainer.hidden = true
+    }
+
+    // Laat alle woorden de huidige staat van het model tonen.
+    update() {
+        this._words.forEach(word => word.update())
     }
 
     setSources(sources) {

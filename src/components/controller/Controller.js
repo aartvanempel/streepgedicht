@@ -13,9 +13,19 @@ class Controller {
     _init() {
         this._render(this._category)
 
-        Observer.subscribe(this._view, 'onReset', () => this._model.reset())
-        Observer.subscribe(this._view, 'onBlackout', () => this._model.selectAll())
-        Observer.subscribe(this._view, 'onWordClick', item => this._model.toggleSelected(item))
+        // Elke wijziging gaat via het model; daarna werkt de view zich bij.
+        Observer.subscribe(this._view, 'onReset', () => {
+            this._model.reset()
+            this._view.update()
+        })
+        Observer.subscribe(this._view, 'onBlackout', () => {
+            this._model.selectAll()
+            this._view.update()
+        })
+        Observer.subscribe(this._view, 'onWordClick', item => {
+            this._model.toggleSelected(item)
+            this._view.update()
+        })
         Observer.subscribe(this._view, 'onCategoryChanged', category => this._render(category))
         Observer.subscribe(this._view, 'onRetry', () => this._render(this._category))
     }

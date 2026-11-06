@@ -1,21 +1,26 @@
 import Observer from '../../static/js/utils/Observer';
 
+// Eén woord van het gedicht. Een knop, zodat je hem ook met het toetsenbord
+// kunt wegstrepen. De weergave volgt altijd item.selected uit het model.
 class Word {
-    constructor(options) {
-        this._element = document.createElement('span');
-        this._element.textContent = options.label;
-        this._element.addEventListener('click', () => this._onClick());
+    constructor(item) {
+        this._item = item;
+        this._element = document.createElement('button');
+        this._element.type = 'button';
+        this._element.className = 'word';
+        this._element.textContent = item.label;
+        this._element.addEventListener('click', () => Observer.publish(this, 'wordClick'));
+        this.update();
     }
 
-    _onClick() {
-        this._element.classList.toggle('blackout');
-        Observer.publish(this, 'wordClick');
+    update() {
+        this._element.classList.toggle('blackout', this._item.selected);
+        this._element.setAttribute('aria-pressed', String(this._item.selected));
     }
 
     get element() {
         return this._element;
     }
-
 }
 
 export default Word;

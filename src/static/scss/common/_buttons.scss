@@ -1,11 +1,18 @@
+@use "tokens" as *;
+
 button {
   margin: 0;
+}
+
+// Zichtbare focus voor toetsenbordgebruikers (niet bij klikken met de muis).
+:focus-visible {
+  outline: 2px solid $ink;
+  outline-offset: 2px;
 }
 
 .btn {
   display: block;
   border: none;
-  outline: 0;
   padding: 0;
   font-size: 16px;
   text-transform: capitalize;
@@ -14,14 +21,14 @@ button {
   cursor: pointer;
 
   &--category {
-    color: #222;
+    color: $ink;
   }
 
   &--save {
     margin: auto;
     margin-top: -10px;
     padding: 16px 32px;
-    background-color: #ffd300;
-    color: #222;
+    background-color: $yellow;
+    color: $ink;
   }
 }

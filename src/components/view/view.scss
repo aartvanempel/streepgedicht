@@ -1,3 +1,5 @@
+@use "../../static/scss/common/tokens" as *;
+
 .category-container {
   margin: auto;
   max-width: 320px;
@@ -10,7 +12,7 @@
     height: 32px;
     margin-right: 16px;
     border-radius: 50%;
-    background-color: #ffd300;
+    background-color: $yellow;
   }
 }
 
@@ -29,7 +31,7 @@
     transform: translateX(-50%);
     height: 1px;
     bottom: -1px;
-    background-color: #eaeaea;
+    background-color: $line;
     width: 272px;
   }
 
@@ -55,7 +57,7 @@
   transform: translateX(-50%);
   width: 272px;
   padding: 0 16px;
-  background-color: #fff;
+  background-color: $paper;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 
   > div {
@@ -74,7 +76,7 @@
     }
 
     button {
-      color: #222;
+      color: $ink;
 
       &::before {
         content: '';
@@ -88,11 +90,7 @@
 }
 
   > div + div {
-    border-top: 1px solid #eaeaea;
-  }
-
-  &.show {
-    display: block;
+    border-top: 1px solid $line;
   }
 }
 
@@ -108,11 +106,10 @@
     padding: 0 4px;
     font-family: 'Lora', serif;
     font-size: 16px;
-    color: #222;
+    color: $ink;
 
     span {
       margin: 4px;
-      cursor: pointer;
     }
   }
 }

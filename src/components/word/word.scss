@@ -1,3 +1,16 @@
+@use "../../static/scss/common/tokens" as *;
+
+// Woorden zijn knoppen, maar moeten eruitzien als gewone tekst.
+.word {
+  margin: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 .blackout {
-  background-color: #222;
+  background-color: $ink;
 }

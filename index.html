@@ -27,29 +27,29 @@
                 </div>
             </div>
             <div class="info-container">
-                <div class="info">
+                <button class="info" aria-label="Over Streepgedicht" aria-expanded="false" aria-controls="info-overlay">
                     <i class="fa-solid fa-info"></i>
-                </div>
+                </button>
             </div>
         </div>
     </div>
 
     <div class="category-container">
-        <nav id='nav'>
+        <nav id="nav" aria-label="Categorie">
             <div class="category-active-container">
                 <div class="category-active">
                     <div class="icon">
                         <i class="fa-regular fa-comments"></i>
                     </div>
 
-                    <button class="btn btn--category">achterklap</button>
+                    <button class="btn btn--category" aria-expanded="false" aria-controls="category-options">achterklap</button>
                 </div>
 
                 <div class="arrow">
                     <i class="fa-solid fa-caret-down"></i>
                 </div>
             </div>
-            <div class="category-options">
+            <div class="category-options" id="category-options">
                 <div>
                     <div class="icon">
                         <i class="fa-regular fa-newspaper"></i>
@@ -106,19 +106,19 @@
 
         <div class="main-container">
 
-            <div class="error-container" hidden>
+            <div class="error-container" role="alert" hidden>
                 <p>Het nieuws kon niet worden geladen.</p>
                 <button class="btn">Probeer opnieuw</button>
             </div>
 
-            <div class='loading-container'>
+            <div class="loading-container" role="status">
                 <p>Nieuws ophalen<span class="dot dot--one">.</span><span class="dot dot--two">.</span><span class="dot dot--three">.</span></p>
             </div>
 
             <div id="main">
                 <div id='content-container' class='content-container'>
                 </div>
-                <div id='tag-container' class='content-container'>
+                <div id="tag-container" class="content-container" aria-hidden="true">
                     <p>
                         <span class="tag">■■■■■■■</span>
                         <span class="tag">■■■</span>
@@ -141,10 +141,10 @@
 
     </div>
 
-    <div class="info-overlay">
+    <div class="info-overlay" id="info-overlay" role="dialog" aria-labelledby="info-title">
         <div class="info-content">
             <div>
-                <h1>Over ons</h1>
+                <h1 id="info-title">Over ons</h1>
                 <button class="close" aria-label="Sluiten"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <p>
@@ -153,7 +153,7 @@
             </p>
             <p>
                 Heb je zelf een leuk streepgedicht gemaakt? Tag <a href="https://www.instagram.com/streepgedicht/"
-                    target="_blank">@streepgedicht</a> als je hem op instagram post. We vinden
+                    target="_blank" rel="noopener">@streepgedicht</a> als je hem op instagram post. We vinden
                 het heel leuk om te zien wat jullie van de teksten maken!
             </p>
             <p>
@@ -162,8 +162,8 @@
             <p>
                 Shout out naar ons:
                 <br />
-                <a href="https://telegram.dog/aartvanempel" target="_blank">@aartvanempel</a> en <a
-                    href="https://www.instagram.com/hogekoen/" target="_blank">@hogekoen</a>.
+                <a href="https://telegram.dog/aartvanempel" target="_blank" rel="noopener">@aartvanempel</a> en <a
+                    href="https://www.instagram.com/hogekoen/" target="_blank" rel="noopener">@hogekoen</a>.
             </p>
         </div>
     </div>
