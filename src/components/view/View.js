@@ -14,6 +14,8 @@ class View {
         this._contentContainer = document.querySelector('.content-container')
         this._contentParagraph = document.createElement('p')
         this._infoContainer = document.querySelector('.info-overlay')
+        this._sourcesContainer = document.querySelector('.sources')
+        this._sourcesList = this._sourcesContainer.querySelector('ol')
 
         this._init()
     }
@@ -36,6 +38,7 @@ class View {
     showLoading() {
         this._contentContainer.innerHTML = ''
         this._errorContainer.hidden = true
+        this._sourcesContainer.hidden = true
         this._loadingContainer.hidden = false
     }
 
@@ -59,6 +62,21 @@ class View {
         this._contentContainer.prepend(this._contentParagraph)
 
         this._loadingContainer.hidden = true
+    }
+
+    setSources(sources) {
+        this._sourcesList.replaceChildren(...sources.map(source => {
+            const link = document.createElement('a')
+            link.href = source.link
+            link.target = '_blank'
+            link.rel = 'noopener'
+            link.textContent = source.title
+
+            const item = document.createElement('li')
+            item.appendChild(link)
+            return item
+        }))
+        this._sourcesContainer.hidden = sources.length === 0
     }
 }
 

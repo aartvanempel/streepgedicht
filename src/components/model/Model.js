@@ -7,7 +7,10 @@ class Model {
 
     async getData(category) {
         const response = await getFeed(category)
-        return Model.processedData(response)
+        return {
+            words: Model.processedData(response),
+            sources: response.items.slice(0, 7).filter(item => item.link),
+        }
     }
 
     setData(data) {

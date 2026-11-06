@@ -28,10 +28,11 @@ class Controller {
         this._view.showLoading()
 
         try {
-            const data = await this._model.getData(category)
+            const { words, sources } = await this._model.getData(category)
             if (requestId !== this._requestId) return
-            this._model.setData(data)
-            this._view.setContent(data)
+            this._model.setData(words)
+            this._view.setContent(words)
+            this._view.setSources(sources)
         } catch (error) {
             if (requestId !== this._requestId) return
             console.error(error)

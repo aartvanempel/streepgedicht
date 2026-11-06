@@ -178,3 +178,27 @@ body {
     }
   }
 }
+.sources {
+  margin: 32px 16px 0;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+
+  summary {
+    cursor: pointer;
+    text-align: center;
+  }
+
+  ol {
+    margin: 12px 0 0;
+    padding-left: 20px;
+  }
+
+  li + li {
+    margin-top: 8px;
+  }
+
+  a {
+    font-weight: 300;
+    line-height: 1.4;
+  }
+}

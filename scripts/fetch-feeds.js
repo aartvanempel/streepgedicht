@@ -5,6 +5,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import RSS from 'rss-parser';
 
 const CATEGORIES = ['algemeen', 'tech', 'achterklap', 'wetenschap', 'sport', 'muziek', 'gezondheid', 'economie'];
+const ITEMS_PER_FEED = 7;
 const OUT_DIR = new URL('../public/feeds/', import.meta.url);
 
 const parser = new RSS({ timeout: 15000 });
@@ -16,7 +17,8 @@ for (const category of CATEGORIES) {
         const feed = await parser.parseURL(`https://www.nu.nl/rss/${category}`);
         const data = {
             updated: new Date().toISOString(),
-            items: feed.items.map(item => ({ title: item.title })),
+            // Alleen wat de site gebruikt: 7 koppen met een link naar het artikel.
+            items: feed.items.slice(0, ITEMS_PER_FEED).map(item => ({ title: item.title, link: item.link })),
         };
         await writeFile(new URL(`${category}.json`, OUT_DIR), JSON.stringify(data));
         console.log(`✓ ${category} (${data.items.length} koppen)`);
