@@ -2,7 +2,7 @@
 
 Maak een digitaal streepgedicht gebaseerd op koppen van nu.nl.
 
-Live: [streepgedicht.nl](https://streepgedicht.nl)
+Live: [aartvanempel.github.io/streepgedicht](https://aartvanempel.github.io/streepgedicht/)
 
 ## Lokaal draaien
 
